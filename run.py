@@ -9,7 +9,7 @@ Markups on the board to show if we hit or missed.
 
 """
 Defining 2 boards, one for the player to have their guesses on and one with 
-the correct solution on it. 
+the correct solution on it. ANSWER_BOARD is hidden and used to check locations against only 
 """
 ANSWER_BOARD = [[' '] * 10 for x in range(9)]
 PLAYER_BOARD = [[' '] * 10 for x in range(9)]
@@ -18,8 +18,17 @@ PLAYER_BOARD = [[' '] * 10 for x in range(9)]
 Converting to letters to use at the top of the board for easier overview of 
 the gameboard.
 """
-letters_convert = {'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4, 'F': 5, 'G': 6,
- 'H': 7, 'I': 8}
+letters_convert = {
+    'A': 0, 
+    'B': 1, 
+    'C': 2, 
+    'D': 3, 
+    'E': 4, 
+    'F': 5, 
+    'G': 6,
+    'H': 7, 
+    'I': 8
+}
 
 """
 Loop to build the boards for both the PLAYER_BOARD and the ANSWER_BOARD.
@@ -62,5 +71,39 @@ def get_ship_location():
 Counts the hits and tells us how many hits we have. 
 """
 def count_hit_ships(board):
-    pass
+    count = 0
+    for row in board:
+        for colums in row:
+            if column == "X":
+                count += 1
+    return count
+
+create_ships(ANSWER_BOARD)
+print_board(ANSWER_BOARD)
+turns = 25
+"""
+function to check if the input data is a hit or a miss, also checks if your winning. 25 turns to find the ships or you lose.
+"""
+
+while turns > 0:
+    print('LETS PLAY BATTLESHIPS')
+    print_board(PLAYER_BOARD)
+    row, column = get_ship_location()
+    if PLAYER_BOARD[row][column] == '-' or 'X':
+        print('You already guessed that')
+    elif ANSWER_BOARD[row][column] == 'X':
+        print(' HIT, you have sunk a ship.')
+        PLAYER_BOARD[row][column] = 'X'
+        turns -= 1
+    else:
+        print('MISS, try again')
+        PLAYER_BOARD[row][column] = '-'
+        turns -= 1
+    if count_hit_ships(PLAYER_BOARD) == 5:
+        print('Congratulations, you won no more ships present')
+        break
+        print('You have ' + str(turns) + ' turns remaining')
+    if turns == 0:
+        print('No more bombs left you got captured')
+        break
 
