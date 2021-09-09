@@ -15,8 +15,8 @@ the correct solution on it. ANSWER_BOARD is hidden and used to check locations
 against only.
 """
 
-ANSWER_BOARD = [[' '] * 10 for x in range(9)]
-PLAYER_BOARD = [[' '] * 10 for x in range(9)]
+ANSWER_BOARD = [[' '] * 9 for x in range(9)]
+PLAYER_BOARD = [[' '] * 9 for x in range(9)]
 
 """
 Converting to letters to use at the top of the board for easier overview of
