@@ -61,14 +61,14 @@ always be an uppercase letter that is provided for the code to run.
 
 
 def get_ship_location():
-    row = input('Please enter a ship row 1-9: ')
+    row = input('Please enter a ship row 1-9: \n')
     while row not in '123456789':
         print('Please enter a valid row')
-        row = input('Please enter a ship row 1-9: ')
-    column = input('Please enter a ship column A-I: ').upper()
+        row = input('Please enter a ship row 1-9: \n')
+    column = input('Please enter a ship column A-I: \n').upper()
     while column not in 'ABCDEFGHI':
         print('Please enter a valid column')
-        column = input('Please enter a ship column A-I: ').upper()
+        column = input('Please enter a ship column A-I: \n').upper()
     return int(row) - 1, letters_convert[column]
 
 
