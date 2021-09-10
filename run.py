@@ -18,6 +18,7 @@ PLAYER_BOARD = [[' '] * 9 for x in range(9)]
 
 # Loop to build the boards for both the PLAYER_BOARD and the ANSWER_BOARD.
 
+
 def print_board(board):
     print('  A B C D E F G H I')
     print('  +-+-+-+-+-+-+-+-+')
@@ -47,7 +48,7 @@ letters_convert = {
 
 def create_ships(board):
     for ship in range(5):
-        ship_row, ship_column = randint(0,8), randint(0,8)
+        ship_row, ship_column = randint(0, 8), randint(0, 8)
         while board[ship_row][ship_column] == 'X':
             ship_row, ship_column = get_ship_location()
         board[ship_row][ship_column] = 'X'
@@ -57,6 +58,7 @@ Function to add the input data on where to drop the bomb. built with loops to
 make sure correct data is entered. .upper is used to make sure that it will
 always be an uppercase letter that is provided for the code to run.
 """
+
 
 def get_ship_location():
     row = input('Please enter a ship row 1-9: ')
