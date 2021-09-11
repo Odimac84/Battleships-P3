@@ -71,7 +71,7 @@ FIXED: missed to att the 9 as one of the active numbers in the code. (line 65)
 
 ![picture of one bug](/assets/images/bugfix1.jpg)
 
-# Deploying to Heroko
+# Deploying to Heroku
 
 - First you need to have the project ready on Github.
     - Make sure that your Creds file is in gitignore if needed
@@ -80,7 +80,7 @@ FIXED: missed to att the 9 as one of the active numbers in the code. (line 65)
 
 - Now when this is set we can move on
 
-- Go onto [Heroko](https://id.heroku.com/login)
+- Go onto [Heroku](https://id.heroku.com/login)
 
 - Login or create a new account if you dont have one already.
 
@@ -127,10 +127,10 @@ Game is built using Python alone.
 Hold the respiratory for this project along with files.
     
 - [Gitpod](https://www.gitpod.io)
-the platform ive been submitting and writing the final code.
+The platform ive been submitting and writing the final code.
     
-- [Heroko](https://id.heroku.com/login)
-for the icons used to symbolise the weapons of choice.
+- [Heroku](https://id.heroku.com/login)
+To deploy the code in an app.
      
 - Visual Studio (desktop)
 Been coding in Visual Studio first and tested the code before i copied it up to github for commits.
